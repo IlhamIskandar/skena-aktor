@@ -1,0 +1,267 @@
+//HEADER SECTION //
+.benefit-header {
+    background-color: #ffc400;
+    min-height: 400px;
+    padding: 4rem 0;
+    color: #000;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 20px;
+    padding-top: 30px;
+    margin: 0 auto;
+    color: #000;
+}
+//MAIN BENEFITS SECTION //
+.main-benefits {
+    background-color: #ffc400;
+    padding: 4rem 0;
+}
+
+.benefit-card {
+    background: #ffc400;
+    border-radius: 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.benefit-card.yellow {
+    background: #ffc400;
+    border: 10px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 684px;
+    width: 392px;
+}
+
+.benefit-title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.benefit-desc {
+    font-size: 20px;
+    text-align:center;
+    line-height: 1.5;
+    margin: 0;
+}
+
+// MORE BENEFITS SECTION //
+.more-benefits {
+    background-color: #ffc400;
+    padding: 4rem 0;
+}
+.benefits-container {
+    background-color: #ffffff;
+    border-radius: 16px;       
+    padding: 3rem;             
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.more-title .text-yellow {
+    color: #ffc400; 
+}
+
+.more-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.benefit-box {
+    background: #ECECEC;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.box-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- OUR IMPACT SECTION --- */
+.our-impact {
+    background-color: #ffc400;
+    padding: 4rem 0;
+    color: #000;
+}
+
+.impact-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.impact-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.impact-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.impact-placeholder {
+    width: 100px;
+    height: 100px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #666;
+}
+
+.impact-caption {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    
+    .benefit-header,
+    .main-benefits,
+    .more-benefits,
+    .our-impact {
+        padding: 3rem 1rem; 
+    }
+
+    // HEADER SECTION //
+    .header-title {
+        font-size: 2rem; 
+        text-align: center; 
+    }
+
+    .subtitle {
+        font-size: 1rem; 
+        padding-top: 20px;
+        text-align: center; 
+    }
+
+    // MAIN BENEFITS SECTION //
+    .benefit-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    
+    .benefit-card.yellow {
+        width: auto; /
+        height: auto; 
+        min-height: 250px; 
+        padding: 2rem 1.5rem; 
+        margin-bottom: 1.5rem; 
+    }
+
+    .benefit-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .benefit-desc {
+        font-size: 0.95rem; 
+
+    // MORE BENEFITS SECTION //
+    .benefits-container {
+        padding: 2rem 1.5rem; /
+    }
+
+    .more-title {
+         
+         text-align: center;
+    }
+
+    .more-subtitle {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .benefit-box {
+        padding: 1.25rem;
+        margin-bottom: 1rem; 
+    }
+
+    .box-title {
+        font-size: 1.1rem;
+    }
+
+    .box-desc {
+        font-size: 0.9rem;
+    }
+
+   
+    .impact-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .impact-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .impact-card {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .impact-placeholder {
+        width: 70px; 
+        height: 70px;
+        font-size: 1.5rem;
+    }
+
+    .impact-caption {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,256 @@
+body {
+    background-color: #fff; 
+}
+
+// HEADER SECTION //
+.registration-header {
+    background-color: #ffc400; 
+    min-height: 400px;
+    padding: 4rem 0;
+    color: #000;
+}
+
+.header-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #000; 
+}
+
+.subtitle {
+    font-size: 20px;
+    padding-top: 20px;
+    margin: 0 auto;
+    color: #000; 
+}
+
+//REGISTRATION FORM SECTION//
+.registration-form {
+    background-color: #fff; 
+    padding: 4rem 0;
+}
+
+.form-card {
+    background: #fff;
+    border-radius: 12px; 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem; 
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.25rem; 
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6c757d; 
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem; 
+    border: none; 
+    background-color: #f8f9fa; 
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: #f8f9fa; 
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.25);
+}
+
+.form-control::placeholder {
+    color: #adb5bd;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #FFC107;
+    color: #000;
+    border: none;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    font-weight: 700; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background-color: #FFB300;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+    transform: translateY(-2px);
+}
+
+//PAYMENT INFO SECTION//
+.payment-info {
+    background-color: #fff; 
+    padding: 4rem 0;
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a; 
+    margin-bottom: 2rem;
+}
+
+.info-title-light {
+    color: #adb5bd; 
+    font-weight: 700; 
+}
+
+.payment-box {
+    background: #fff; 
+    border: 1px solid #e9ecef; 
+    border-radius: 12px; 
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem; 
+}
+
+.payment-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.payment-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.payment-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.payment-desc {
+    font-size: 0.95rem;
+    color: #6c757d; 
+    line-height: 1.5;
+    margin: 0;
+}
+
+// AFTER PAYMENT SECTION //
+.after-payment {
+    background-color: #ffc400; 
+    padding: 4rem 0;
+    color: #000;
+}
+
+.after-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000; 
+    margin-bottom: 3rem; 
+}
+
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #fff; 
+    color: #000; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 1.5rem; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000; 
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 300px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (max-width: 768px) {
+    .registration-header {
+        padding: 3rem 0;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
+    }
+    
+    .registration-form, .payment-info, .after-payment {
+        padding: 3rem 0;
+    }
+
+    .form-title {
+        font-size: 1.25rem;
+    }
+
+    .payment-box {
+        padding: 1.5rem;
+    }
+
+    .payment-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .after-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .step-title {
+        font-size: 1rem;
+    }
+}
