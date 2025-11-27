@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('tanggal_pembayaran')->nullable();
             $table->string('bukti_pembayaran')->nullable();
 
-            $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_class')->references('id_class')->on('classes')->onDelete('cascade');
 
             $table->index('id_user');

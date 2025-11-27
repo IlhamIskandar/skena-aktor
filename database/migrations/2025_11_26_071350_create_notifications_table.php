@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('platform', 50)->nullable();
             $table->timestamp('created_at')->nullable();
 
-            $table->foreign('recipient')->references('id_user')->on('users')->onDelete('cascade');
+            $table->foreign('recipient')->references('id')->on('users')->onDelete('cascade');
 
             $table->index('recipient');
         });
