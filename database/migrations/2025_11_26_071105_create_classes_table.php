@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('tutor')->nullable();
             $table->text('jadwal_kelas')->nullable();
             $table->decimal('price', 10, 2)->default(0);
+            $table->integer('max_peserta')->default(0);
             $table->timestamp('create_at')->nullable();
         });
     }
