@@ -5,8 +5,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home.welcome');
-});
+    return view('home.home');
+})->name('home.index');
 // Route::get('/user', [UserController::class, 'index']);
 // Route::get('/kontak', [ContactController::class, 'index']);
 
@@ -46,6 +46,7 @@ Route::get('/chatbot', function () {
 // });
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
+
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('admin.dashboard');
@@ -67,5 +68,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 });
 
+Route::/*middleware(['auth'])->*/prefix('member')->group(function () {
 
+Route::get('/', function () {
+    return view('member.index');
+})->name('member.index');
+
+});
 require __DIR__.'/auth.php';

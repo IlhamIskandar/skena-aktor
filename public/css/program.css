@@ -1,7 +1,7 @@
-// HERO SECTION //
+/* // HERO SECTION // */
 .programs-hero {
     background-color: #ffc400;
-    min-height: 400px; 
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
 
 
 
-// PROGRAMS SECTION //
+/* // PROGRAMS SECTION // */
 .programs-section {
     background-color: #fff;
     padding: 4rem 0;
@@ -46,9 +46,9 @@
     line-height: 1.6;
 }
 
-// PROGRAM CARD //
+/* // PROGRAM CARD // */
 .program-card {
-    background: #f8f9fa; 
+    background: #f8f9fa;
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -56,17 +56,17 @@
     display: flex;
     flex-direction: column;
     border: 2px solid #dee2e6;
-    height: 470px; 
-    padding: 1.5rem; 
+    height: 470px;
+    padding: 1.5rem;
 }
 
 .program-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    border-color: #FFC107; 
+    border-color: #FFC107;
 }
 
-// PROGRAM CONTENT //
+/* // PROGRAM CONTENT // */
 .program-content {
     display: flex;
     flex-direction: column;
@@ -129,7 +129,7 @@
     flex-direction: column;
     gap: 0.25rem;
     text-align: center;
-    margin-top: auto; 
+    margin-top: auto;
 }
 
 .price-amount {
@@ -144,7 +144,7 @@
     color: #888;
 }
 
-//CTA SECTION //
+/* //CTA SECTION // */
 .programs-cta {
     background-color: #ffc400;
     min-height: 400px;
@@ -204,7 +204,7 @@
     }
 
     .program-card {
-        height: auto; 
+        height: auto;
         padding: 1.25rem;
     }
 

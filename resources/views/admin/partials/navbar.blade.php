@@ -3,7 +3,7 @@
 
     <div class="flex items-center gap-4">
         <span>{{ Auth::user()->name }}</span>
-        <form action="{{ route('logout') }}" method="POST">
+        <form action="{{ route('home.index') }}" method="POST">
             @csrf
             <button class="text-red-600">Logout</button>
         </form>

@@ -1,4 +1,4 @@
-//HEADER SECTION //
+/* //HEADER SECTION // */
 .benefit-header {
     background-color: #ffc400;
     min-height: 400px;
@@ -18,7 +18,7 @@
     margin: 0 auto;
     color: #000;
 }
-//MAIN BENEFITS SECTION //
+/* //MAIN BENEFITS SECTION // */
 .main-benefits {
     background-color: #ffc400;
     padding: 4rem 0;
@@ -61,21 +61,21 @@
     margin: 0;
 }
 
-// MORE BENEFITS SECTION //
+/* // MORE BENEFITS SECTION // */
 .more-benefits {
     background-color: #ffc400;
     padding: 4rem 0;
 }
 .benefits-container {
     background-color: #ffffff;
-    border-radius: 16px;       
-    padding: 3rem;             
+    border-radius: 16px;
+    padding: 3rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 
 .more-title .text-yellow {
-    color: #ffc400; 
+    color: #ffc400;
 }
 
 .more-subtitle {
@@ -167,39 +167,39 @@
 
 
 @media (max-width: 768px) {
-    
+
     .benefit-header,
     .main-benefits,
     .more-benefits,
     .our-impact {
-        padding: 3rem 1rem; 
+        padding: 3rem 1rem;
     }
 
-    // HEADER SECTION //
+    /* // HEADER SECTION // */
     .header-title {
-        font-size: 2rem; 
-        text-align: center; 
+        font-size: 2rem;
+        text-align: center;
     }
 
     .subtitle {
-        font-size: 1rem; 
+        font-size: 1rem;
         padding-top: 20px;
-        text-align: center; 
+        text-align: center;
     }
 
-    // MAIN BENEFITS SECTION //
+    /* // MAIN BENEFITS SECTION // */
     .benefit-card {
         padding: 1.5rem;
         margin-bottom: 1.5rem;
     }
-    
-    
+
+
     .benefit-card.yellow {
-        width: auto; /
-        height: auto; 
-        min-height: 250px; 
-        padding: 2rem 1.5rem; 
-        margin-bottom: 1.5rem; 
+        width: auto;
+        height: auto;
+        min-height: 250px;
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .benefit-title {
@@ -208,15 +208,15 @@
     }
 
     .benefit-desc {
-        font-size: 0.95rem; 
-
-    // MORE BENEFITS SECTION //
+        font-size: 0.95rem;
+    }
+    /* // MORE BENEFITS SECTION // */
     .benefits-container {
         padding: 2rem 1.5rem; /
     }
 
     .more-title {
-         
+
          text-align: center;
     }
 
@@ -228,7 +228,7 @@
 
     .benefit-box {
         padding: 1.25rem;
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
     }
 
     .box-title {
@@ -239,7 +239,7 @@
         font-size: 0.9rem;
     }
 
-   
+
     .impact-title {
         font-size: 1.8rem;
         text-align: center;
@@ -256,7 +256,7 @@
     }
 
     .impact-placeholder {
-        width: 70px; 
+        width: 70px;
         height: 70px;
         font-size: 1.5rem;
     }

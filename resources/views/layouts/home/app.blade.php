@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Skena Aktor - Komunitas Acting Terkemuka</title>
+
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,16 +20,21 @@
     <!-- AOS CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link href="{{ asset('css/home-style.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('css/navbar-style.css') }}" rel="stylesheet" type="text/css" >
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tentang.css') }}">
     <link rel="stylesheet" href="{{ asset('css/program.css') }}">
     <link rel="stylesheet" href="{{ asset('css/daftar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/benefit.css') }}">
     <link rel="stylesheet" href="{{ asset('css/kontak.css') }}">
-    <link href="{{ asset('css/home-style.css') }}" rel="stylesheet" type="text/css" >
-    <link href="{{ asset('css/navbar-style.css') }}" rel="stylesheet" type="text/css" >
 
 
-    <title>{{ config('app.name', 'Kontak') }}</title>
+    <title>{{ config('app.name', 'appname') }}</title>
 
 </head>
 <body>
@@ -52,8 +59,6 @@
     @include('components.home-footer')
     <!-- Footer Bottom -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -65,5 +70,8 @@
             offset: 100
         });
     </script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

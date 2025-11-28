@@ -14,6 +14,8 @@
             @csrf
             <button class="text-danger border-0 bg-transparent">Logout</button>
         </form>
+        {{-- <a href="{{route('home.index')}}"><button class="text-danger border-0 bg-transparent">Logout</button></a> --}}
+
     </div>
     <div class="badge">Online</div>
     <div class="profile-info" style="text-align:right">

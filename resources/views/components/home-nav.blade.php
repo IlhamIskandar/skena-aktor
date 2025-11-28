@@ -14,7 +14,7 @@
     </ul>
 
     <div class="nav-buttons">
-        <a href="{{route('daftar.index')}}"><button class="btn btn-register">Register</button></a>
-        <a href="{{route('login')}}"><button class="btn btn-login">Login</button></a>
+        <a href="{{route('member.index')}}"><button class="btn btn-register">Member</button></a>
+        <a href="{{route('admin.dashboard')}}"><button class="btn btn-login">Admin</button></a>
     </div>
 </nav>
