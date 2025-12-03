@@ -10,13 +10,27 @@ return new class extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->id('id_class');
-            $table->string('nama_kelas');
-            $table->text('deskripsi')->nullable();
-            $table->string('tutor')->nullable();
-            $table->text('jadwal_kelas')->nullable();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('mentor')->nullable();
+
+            // Jadwal kelas (lebih terstruktur)
+            $table->date('start_date')->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->string('day_of_week')->nullable(); // contoh: Saturday, Friday
+            $table-> integer('duration_weeks')->nullable(); // Durasi kelas dalam minggu
+
+            // Informasi kelas
             $table->decimal('price', 10, 2)->default(0);
-            $table->integer('max_peserta')->default(0);
-            $table->timestamp('create_at')->nullable();
+            $table->integer('max_participant')->default(0);
+
+            // Status kelas
+            $table->enum('status', ['upcoming', 'ongoing', 'finished'])
+                ->default('upcoming');
+
+            $table->timestamps();
+            $table->softDeletes(); // untuk mengelola penghapusan admin
         });
     }
 

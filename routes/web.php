@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,28 +46,34 @@ Route::get('/chatbot', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-Route::middleware(['auth'])->prefix('admin')->group(function () {
+Route::middleware(['auth'])
+    ->prefix('admin')
+    ->name('admin.') // penting supaya route resource memiliki prefix nama admin.*
+    ->group(function () {
 
-    // Route::get('/dashboard', function () {
-    //     return view('dashboard');
-    // })->name('admin.dashboard');
-    Route::get('/dashboard', fn() => view('admin.dashboard'))->name('admin.dashboard');
-    Route::get('/participants', fn() => view('admin.participants'))->name('admin.participants');
-    Route::get('/classes', fn() => view('admin.classes'))->name('admin.classes');
-    Route::get('/certificates', fn() => view('admin.certificates'))->name('admin.certificates');
-    Route::get('/notifications', fn() => view('admin.notifications'))->name('admin.notifications');
-    Route::get('/chatbot', fn() => view('admin.chatbot'))->name('admin.chatbot');
+    Route::resource('classes', ClassController::class);
+    // Enroll peserta
+    Route::post('classes/{id}/enroll',
+        [ClassController::class, 'enrollStore'])
+        ->name('classes.enroll.store');
+    // Remove peserta
+    Route::delete('classes/{id}/enroll',
+        [ClassController::class, 'enrollRemove'])
+        ->name('classes.enroll.remove');
+
+
+    Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
+    Route::view('/participants', 'admin.participants')->name('participants');
+    Route::view('/certificates', 'admin.certificates')->name('certificates');
+    Route::view('/notifications', 'admin.notifications')->name('notifications');
+    Route::view('/chatbot', 'admin.chatbot')->name('chatbot');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/dashboard', fn() => view('admin.dashboard'))->name('admin.dashboard');
-    Route::get('/participants', fn() => view('admin.participants'))->name('admin.participants');
-    Route::get('/classes', fn() => view('admin.classes'))->name('admin.classes');
-    Route::get('/certificates', fn() => view('admin.certificates'))->name('admin.certificates');
-    Route::get('/notifications', fn() => view('admin.notifications'))->name('admin.notifications');
-    Route::get('/chatbot', fn() => view('admin.chatbot'))->name('admin.chatbot');
 
 });
+
 
 Route::/*middleware(['auth'])->*/prefix('member')->group(function () {
 

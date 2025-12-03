@@ -15,6 +15,7 @@ return new class extends Migration
             $table->enum('status', ['pending', 'approved', 'rejected', 'completed'])->default('pending');
             $table->integer('progress')->default(0);
             $table->timestamp('enrolled_at')->nullable();
+            $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_class')->references('id_class')->on('classes')->onDelete('cascade');

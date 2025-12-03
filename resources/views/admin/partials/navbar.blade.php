@@ -1,11 +1,14 @@
-<header class="mb-6 flex justify-between items-center">
-    <h1 class="text-2xl font-semibold">Admin Dashboard</h1>
-
-    <div class="flex items-center gap-4">
-        <span>{{ Auth::user()->name }}</span>
-        <form action="{{ route('home.index') }}" method="POST">
-            @csrf
-            <button class="text-red-600">Logout</button>
-        </form>
-    </div>
-</header>
+<!-- Top Navigation -->
+    <nav class="top-navbar">
+        <div class="logo-nav">
+            <img src="/assets/logoSkena.png" alt="logo" class="img">
+            <div class="admin-label">Admin Panel</div>
+        </div>
+        <div class="nav-buttons">
+            <button class="btn-back" id="backBtn">
+                <i class="bi bi-arrow-left"></i>
+                Kembali
+            </button>
+            <button class="btn btn-logout">Logout</button>
+        </div>
+    </nav>
