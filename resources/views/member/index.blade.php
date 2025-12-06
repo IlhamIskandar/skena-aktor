@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard - Skena Aktor</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+
     <style>
         * {
             margin: 0;
@@ -575,10 +582,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('home.index')}}" class="nav-link">
-                            <span class="nav-icon">🚪</span>
-                            <span>Keluar</span>
-                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button href="{{route('logout')}}" class="btn btn-danger">
+                                <span>Keluar</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -847,5 +856,7 @@
             }
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\ParticipantsController;
+use App\Http\Controllers\CertificatesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\RoleMiddleware;
 
 Route::get('/', function () {
     return view('home.home');
@@ -36,19 +39,9 @@ Route::get('/chatbot', function () {
     return view('home.chatbot');
 })->name('chatbot.index');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-Route::middleware(['auth'])
+Route::middleware(['auth', 'role:admin'])
     ->prefix('admin')
-    ->name('admin.') // penting supaya route resource memiliki prefix nama admin.*
+    ->name('admin.')
     ->group(function () {
 
     Route::resource('classes', ClassController::class);
@@ -61,9 +54,11 @@ Route::middleware(['auth'])
         [ClassController::class, 'enrollRemove'])
         ->name('classes.enroll.remove');
 
+    Route::resource('participants', ParticipantsController::class);
+     Route::resource('certificates', CertificatesController::class);
+
 
     Route::view('/dashboard', 'admin.dashboard')->name('dashboard');
-    Route::view('/participants', 'admin.participants')->name('participants');
     Route::view('/certificates', 'admin.certificates')->name('certificates');
     Route::view('/notifications', 'admin.notifications')->name('notifications');
     Route::view('/chatbot', 'admin.chatbot')->name('chatbot');
@@ -75,11 +70,14 @@ Route::middleware(['auth'])
 });
 
 
-Route::/*middleware(['auth'])->*/prefix('member')->group(function () {
+Route::middleware(['auth', 'role:user,member'])
+    ->prefix('member')
+    ->name('member.')
+    ->group(function () {
 
-Route::get('/', function () {
-    return view('member.index');
-})->name('member.index');
+    Route::get('/', function () {
+        return view('member.index');
+    })->name('index');
 
 });
 require __DIR__.'/auth.php';
