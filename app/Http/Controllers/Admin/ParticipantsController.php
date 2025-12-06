@@ -5,17 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ParticipantsController extends Controller
 {
     /** LIST USER & MEMBER */
     public function index()
     {
-        $users = User::whereIn('role', ['user', 'member'])
-                      ->orderBy('name')
+        $participants = User::whereIn('role', ['user', 'member'])
+                      ->orderBy('created_at', 'desc')
                       ->paginate(10);
 
-        return view('admin.participants.index', compact('users'));
+        return view('admin.participants.index', compact('participants'));
     }
 
     /** FORM CREATE */
@@ -28,18 +29,21 @@ class ParticipantsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'      => 'required|string|max:200',
+            'name'      => 'required|string|max:255',
             'email'     => 'required|email|unique:users,email',
-            'password'  => 'required|min:6',
-            'no_telp'   => 'nullable|string|max:20',
+            'password'  => 'required|min:6|confirmed',
+            'role'      => 'required|in:user,member',
         ]);
 
+        // dump($request->all());
+        // die();
+
         User::create([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'password'  => bcrypt($request->password),
-            'no_telp'   => $request->no_telp,
-            'role'      => 'user',
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+            'role'     => $request->role,
+            'no_telp'  => $request->no_telp,
         ]);
 
         return redirect()->route('admin.participants.index')
@@ -49,33 +53,37 @@ class ParticipantsController extends Controller
     /** EDIT FORM */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $participant = User::findOrFail($id);
 
-        return view('admin.participants.edit', compact('user'));
+        return view('admin.participants.edit', compact('participant'));
     }
 
     /** UPDATE USER */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        $participant = User::findOrFail($id);
 
         $request->validate([
-            'name'      => 'required|string|max:200',
-            'email'     => 'required|email|unique:users,email,' . $user->id,
-            'no_telp'   => 'nullable|string|max:20',
+            'name'      => 'required|string|max:255',
+            'email'     => 'required|email|unique:users,email,' . $participant->id,
+            'no_telp'   => 'nullable|string|max:50',
+            'role'      => 'required|in:user,member',
         ]);
 
-        $data = $request->only('name', 'email', 'no_telp');
+       $participant->name = $request->name;
+        $participant->email = $request->email;
+        $participant->role = $request->role;
+        $participant->no_telp = $request->no_telp;
 
-        if ($request->password) {
-            $request->validate(['password' => 'min:6']);
-            $data['password'] = bcrypt($request->password);
+        // Jika password diisi, update password
+        if ($request->filled('password')) {
+            $participant->password = Hash::make($request->password);
         }
 
-        $user->update($data);
+        $participant->save();
 
         return redirect()->route('admin.participants.index')
-                         ->with('success', 'Data peserta berhasil diperbarui.');
+            ->with('success', 'Data peserta berhasil diperbarui!');
     }
 
     /** DELETE USER */
